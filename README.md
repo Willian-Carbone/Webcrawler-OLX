@@ -13,13 +13,13 @@ Sistema de automação desenvolvido em **Groovy** para captura de dados sobre pr
 - **Linguagem:** Groovy
 - **Integração HTTP:** HttpBuilder-NG
 - **Parser HTML:** JSoup
-- **E-mail:** Jakarta Mail
+- **E-mail:** Jakarta Mail (Utilizando Gmail)
 - **Persistência:** JSON (para gestão de e-mails)
 - **Testes:** JUnit 5
 
 ##  Configuração e Variáveis de Ambiente
 
-Para manter a segurança da sua conta (especialmente ao usar Gmail), o projeto utiliza variáveis de ambiente para as credenciais, salvas como EMAIL_USER e EMAIL_PASS
+Para manter a segurança da  conta, o projeto utiliza variáveis de ambiente para as credenciais, salvas como EMAIL_USER e EMAIL_PASS
 para que o sistema de email funcione  elas devem ser configuradas localmente
 
 ```bash
