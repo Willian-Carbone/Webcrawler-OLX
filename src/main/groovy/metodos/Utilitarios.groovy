@@ -1,8 +1,6 @@
 package metodos
 
 import enuns.Estados
-import groovyx.net.http.FromServer
-import groovyx.net.http.HttpBuilder
 import jakarta.mail.*
 import jakarta.mail.internet.InternetAddress
 import jakarta.mail.internet.MimeBodyPart
@@ -13,12 +11,11 @@ import jakarta.mail.internet.MimeMultipart
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
-import java.nio.file.StandardCopyOption
+
 import java.text.Normalizer
 import java.util.zip.ZipEntry
 import java.util.zip.ZipOutputStream
 
-import static groovyx.net.http.HttpBuilder.configure
 
 class Utilitarios {
 
