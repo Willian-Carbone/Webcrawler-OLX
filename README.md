@@ -1,4 +1,5 @@
 # OLX Web Crawler
+Autor: Willian Carbone Bueno
 
 Sistema de automação desenvolvido em **Groovy** para captura de dados sobre produtos da plataforma olx e distribuição de resultados via e-mail.
 
