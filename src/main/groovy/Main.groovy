@@ -107,9 +107,13 @@ static void main(String[] args) {
             println("Informe o nome do arquivo csv cujo os dados do produto informado serão salvos")
             String nomeArquivo= scan.nextLine()
 
-           double mediacapturada= c.capturarProdutosAbaixoMedia(nomeArquivo,null)
+           ArrayList<Map> produtos= c.capturarProdutosAbaixoMedia()
 
-            println("Dados obtidos com sucesso , a media de preço do produtos totais  é ${mediacapturada} reais, os produtos selecionados possuem preço ate esse limite  ")
+            List<Double> produtoDeMaiorEMenorValor= c.montarCsvECapturarMaiorEMenorValor(produtos,nomeArquivo,null)
+            Double mediacapturada = c.mediaProdutos()
+
+
+            println("Dados obtidos com sucesso , a media de preço do produtos totais  é ${mediacapturada} reais, os produtos selecionados possuem preço ate esse limite , sendo o mais caro ${produtoDeMaiorEMenorValor[0]} e o mais barato ${produtoDeMaiorEMenorValor[1]} ")
 
 
 

@@ -19,6 +19,15 @@ import java.util.zip.ZipOutputStream
 
 class Utilitarios {
 
+    static List<Double> capturarMaiorEMenorValor(ArrayList<Double> valores){
+        Double maior = valores.max()
+        Double menor = valores.min()
+
+        List<Double> valoresObtidos=[maior,menor]
+
+        return valoresObtidos
+    }
+
     static boolean validadorEmail(String email) {
         return (email ==~ /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/)
     }
@@ -184,6 +193,8 @@ class Utilitarios {
             return false
         }
     }
+
+
 }
 
 

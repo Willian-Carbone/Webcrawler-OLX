@@ -120,7 +120,7 @@ class Crawler {
     }
 
 
-    private double mediaProdutos() {
+    double mediaProdutos() {
         int totalProdutos = 0
         double soma = 0
 
@@ -140,11 +140,12 @@ class Crawler {
     }
 
 
-    double capturarProdutosAbaixoMedia(String nomeArquivo,String local){
+     ArrayList<Map> capturarProdutosAbaixoMedia(){
+
 
         double media=mediaProdutos()
         ArrayList<Map> produtosValidos = []
-        ArrayList<String> tituloColunas=["Titulo","Link","Valor","Local"]
+
 
 
         paginas.each { p ->
@@ -157,7 +158,6 @@ class Crawler {
                 if (valorProduto <= media) {
                     Map infoDoProduto = capturarInfosProduto(produto)
                     produtosValidos.add(infoDoProduto)
-
                 }
 
 
@@ -165,11 +165,35 @@ class Crawler {
 
         }
 
-        Utilitarios.criadorCsv(produtosValidos,tituloColunas,nomeArquivo,local)
 
-        return media
+        return produtosValidos
+
 
     }
+
+    List<Double> montarCsvECapturarMaiorEMenorValor(ArrayList<Map> produtos,String nomeArquivo,String local){
+
+        ArrayList<String> tituloColunas=["Titulo","Link","Valor","Local"]
+        Utilitarios.criadorCsv(produtos,tituloColunas,nomeArquivo,local)
+
+        ArrayList<Double> valoresDosProdutos=[]
+
+        produtos.each {produto->
+
+            String valorEmString = produto["Valor"]
+            Double valorDouble = Utilitarios.convercaoValor(valorEmString)
+            valoresDosProdutos.add(valorDouble)
+
+        }
+
+        List<Double> MaiorEMenorValor = Utilitarios.capturarMaiorEMenorValor(valoresDosProdutos)
+
+        return MaiorEMenorValor
+
+    }
+
+
+
 
 
 
