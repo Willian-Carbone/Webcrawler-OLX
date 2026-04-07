@@ -109,7 +109,10 @@ static void main(String[] args) {
 
            ArrayList<Map> produtos= c.capturarProdutosAbaixoMedia()
 
-            List<Double> produtoDeMaiorEMenorValor= c.montarCsvECapturarMaiorEMenorValor(produtos,nomeArquivo,null)
+            ArrayList<String> tituloColunas=["Titulo","Link","Valor","Local"]
+            Utilitarios.criadorCsv(produtos,tituloColunas,nomeArquivo,null)
+
+            List<Double> produtoDeMaiorEMenorValor= c.CapturarMaiorEMenorValor(produtos)
             Double mediacapturada = c.mediaProdutos()
 
 

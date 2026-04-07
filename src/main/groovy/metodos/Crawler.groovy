@@ -171,18 +171,20 @@ class Crawler {
 
     }
 
-    List<Double> montarCsvECapturarMaiorEMenorValor(ArrayList<Map> produtos,String nomeArquivo,String local){
+    List<Double> CapturarMaiorEMenorValor(ArrayList<Map> produtos){
 
-        ArrayList<String> tituloColunas=["Titulo","Link","Valor","Local"]
-        Utilitarios.criadorCsv(produtos,tituloColunas,nomeArquivo,local)
+
 
         ArrayList<Double> valoresDosProdutos=[]
 
         produtos.each {produto->
 
             String valorEmString = produto["Valor"]
+
+            if(valorEmString!="Dado não informado"){
             Double valorDouble = Utilitarios.convercaoValor(valorEmString)
             valoresDosProdutos.add(valorDouble)
+            }
 
         }
 
