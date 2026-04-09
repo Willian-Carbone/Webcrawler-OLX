@@ -75,7 +75,7 @@ class TerminalEmail {
                 }
 
                 if(identificadorEmail!="sair"){
-                    println("email encontrado  ${emails[entrada]}, digite o novo email ou sair para cancelar ação")
+                    println(" digite o novo email ou sair para cancelar ação")
                     String novoEmail= c.nextLine()
 
                     while (!Utilitarios.validadorEmail(novoEmail) && novoEmail!="sair"){
